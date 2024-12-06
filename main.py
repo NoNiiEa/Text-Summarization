@@ -17,6 +17,10 @@ def read_json(dir):
         data = json.load(file)
     return data
 
+def dump_json(dir, data):
+    with open(dir, 'w') as file:
+        json.dump(data, file, indent=4)
+
 def clean_data(data):
     texts = []
     for msg in data:
@@ -44,6 +48,7 @@ def text_processing(texts):
         u"\u231a"
         u"\ufe0f"
         u"\u3030"
+        u"\u00f3"
                       "]+", re.UNICODE)
     translator = str.maketrans('', '', string.punctuation)
     lemmatizer = WordNetLemmatizer()
@@ -112,9 +117,8 @@ def main():
     rank = pageRank(t_graph)
     # rank_test = nx.pagerank(t_graph)
     # rank_test = dict(sorted(rank_test.items(), key=lambda item: item[1]))
-    rank = dict(sorted(rank.items(), key=lambda item: item[1]))
-    print(rank)
-
+    rank = dict(sorted(rank.items(), key=lambda item: item[1], reverse=True))
+    dump_json("./temp/score.json", rank)
     # print(graph.number_of_nodes())
     # print(graph.number_of_edges())
     # pr = nx.pagerank(graph, alpha=0.85)
