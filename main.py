@@ -87,26 +87,33 @@ def visualize_graph(graph):
     plt.title("Trigram Graph")
     plt.show()
 
-def pageRank(graph, alpha = 0.85):
+def pageRank(graph, alpha=0.85, tol=1e-6, max_iter=100):
     nodes = list(graph.nodes())
     numNodes = len(nodes)
 
-    ranks = {node: 1/numNodes for node in nodes}
+    ranks = {node: 1 / numNodes for node in nodes}
 
-    base_rank = (1 - alpha)/numNodes
+    base_rank = (1 - alpha) / numNodes
 
-    for _ in range(100):
-        new_rank = {}
+    for _ in range(max_iter):
+        new_ranks = {}
         for node in nodes:
-            sum_rank = sum(ranks[nieghbor] * graph[nieghbor][node].get('weight') / graph.out_degree[nieghbor] for nieghbor in graph.predecessors(node))
-            rank = base_rank + alpha*sum_rank
+            sum_rank = sum(
+                ranks[neighbor] * graph[neighbor][node].get('weight', 1) /
+                sum(graph[neighbor][nbr].get('weight', 1) for nbr in graph.successors(neighbor))
+                for neighbor in graph.predecessors(node)
+                if sum(graph[neighbor][nbr].get('weight', 1) for nbr in graph.successors(neighbor)) > 0
+            )
+            new_ranks[node] = base_rank + alpha * sum_rank
 
-            new_rank[node] = rank
+        if all(abs(new_ranks[node] - ranks[node]) < tol for node in nodes):
+            break
 
-        rank = new_rank
+        ranks = new_ranks
 
-    
-    return rank
+    return ranks
+
+
 
 def main():
     data = read_json('./data/Itaewon_tragedy.json')
@@ -115,10 +122,11 @@ def main():
     graph = create_trigramGraph(tweets)
     t_graph = graph.reverse(copy=True)
     rank = pageRank(t_graph)
-    # rank_test = nx.pagerank(t_graph)
-    # rank_test = dict(sorted(rank_test.items(), key=lambda item: item[1]))
+    rank_test = nx.pagerank(t_graph)
+    rank_test = dict(sorted(rank_test.items(), key=lambda item: item[1], reverse=True))
     rank = dict(sorted(rank.items(), key=lambda item: item[1], reverse=True))
-    dump_json("./temp/score.json", rank)
+    dump_json("./cache/score.json", rank)
+    dump_json("./cache/score_real.json", rank_test)
     # print(graph.number_of_nodes())
     # print(graph.number_of_edges())
     # pr = nx.pagerank(graph, alpha=0.85)
