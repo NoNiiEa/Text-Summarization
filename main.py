@@ -2,6 +2,7 @@ import json
 from text_preprocessing import *
 from triGraph import *
 from pageRank_fun import *
+from trustRank_fun import trustRank
 
 def read_json(dir):
     with open(dir, 'r') as file:
@@ -16,11 +17,13 @@ def main():
     data = read_json('./data/Itaewon_tragedy.json')
     tweets = text_processing(data)
     graph = create_trigramGraph(tweets)
-    rank = pageRank(graph.reverse(copy=True))
-    rank = dict(sorted(rank.items(), key=lambda item: item[1], reverse=True))
-    dump_json("./cache/score_pageRank.json", rank)
+    pageRanks = pageRank(graph.reverse(copy=True))
+    pageRanks = dict(sorted(pageRanks.items(), key=lambda item: item[1], reverse=True))
+    dump_json("./cache/score_pageRank.json", pageRanks)
 
-    
+    trustRanks = trustRank(graph)
+    trustRanks = dict(sorted(trustRanks.items(), key=lambda item: item[1], reverse=True))
+    dump_json("./cache/score_trustRank.json", trustRanks)
     # rank_test = nx.pagerank(t_graph)
     # rank_test = dict(sorted(rank_test.items(), key=lambda item: item[1], reverse=True))
     # dump_json("./cache/score_real.json", rank_test)
