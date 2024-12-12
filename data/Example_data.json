@@ -1,0 +1,244 @@
+[{
+    "created_at": "Tue Nov 01 15:54:56 +0000 2022",
+    "id": 1587473273884844000,
+    "id_str": "1587473273884844033",
+    "full_text": "There were 112 emergency calls to the police warning of an imminent disaster before the crush happened at Itaewon. https://t.co/DEdcmNzf97",
+    "truncated": false,
+    "display_text_range": [
+      0,
+      114
+    ],
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/DEdcmNzf97",
+          "expanded_url": "https://twitter.com/jeongminnkim/status/1587411716832272384",
+          "display_url": "twitter.com/jeongminnkim/s…",
+          "indices": [
+            115,
+            138
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "iso_language_code": "en",
+      "result_type": "recent"
+    },
+    "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 1240654359790112800,
+      "id_str": "1240654359790112771",
+      "name": "Justin Ong",
+      "screen_name": "JustinOngTODAY",
+      "location": "",
+      "description": "I like to write. Senior journalist at @todayonline covering manpower, sports, finance, housing. Email me at justin.ong@mediacorp.com.sg",
+      "url": "https://t.co/lXTTDXnW2e",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/lXTTDXnW2e",
+              "expanded_url": "https://www.todayonline.com/authors/justin-ong",
+              "display_url": "todayonline.com/authors/justin…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 1333,
+      "friends_count": 291,
+      "listed_count": 7,
+      "created_at": "Thu Mar 19 15:00:35 +0000 2020",
+      "favourites_count": 3356,
+      "utc_offset": null,
+      "time_zone": null,
+      "geo_enabled": true,
+      "verified": true,
+      "statuses_count": 2343,
+      "lang": null,
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "F5F8FA",
+      "profile_background_image_url": null,
+      "profile_background_image_url_https": null,
+      "profile_background_tile": false,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1543925834964430848/eY638P-x_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1543925834964430848/eY638P-x_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/1240654359790112771/1655568121",
+      "profile_link_color": "1DA1F2",
+      "profile_sidebar_border_color": "C0DEED",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": false,
+      "default_profile": true,
+      "default_profile_image": false,
+      "following": false,
+      "follow_request_sent": false,
+      "notifications": false,
+      "translator_type": "none",
+      "withheld_in_countries": []
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": {
+      "id": "58a4c3a0d54e1400",
+      "url": "https://api.twitter.com/1.1/geo/id/58a4c3a0d54e1400.json",
+      "place_type": "admin",
+      "name": "Central Region",
+      "full_name": "Central Region, Singapore",
+      "country_code": "SG",
+      "country": "Singapore",
+      "contained_within": [],
+      "bounding_box": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.749959507073,
+              1.2123138339349
+            ],
+            [
+              103.918426999964,
+              1.2123138339349
+            ],
+            [
+              103.918426999964,
+              1.36874499902569
+            ],
+            [
+              103.749959507073,
+              1.36874499902569
+            ]
+          ]
+        ]
+      },
+      "attributes": {}
+    },
+    "contributors": null,
+    "is_quote_status": true,
+    "quoted_status_id": 1587411716832272400,
+    "quoted_status_id_str": "1587411716832272384",
+    "quoted_status": {
+      "created_at": "Tue Nov 01 11:50:20 +0000 2022",
+      "id": 1587411716832272400,
+      "id_str": "1587411716832272384",
+      "full_text": "Itaewon tragedy: \n\n11 written records of 112 emergency police report calls that night have been released, from 6:30 pm to just a couple minutes before what authorities have been referring to as the time the \"accident\" happened -- 10:15pm. \n\nI am translating them here. Thread:",
+      "truncated": false,
+      "display_text_range": [
+        0,
+        276
+      ],
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "metadata": {
+        "iso_language_code": "en",
+        "result_type": "recent"
+      },
+      "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 904841004305576000,
+        "id_str": "904841004305575936",
+        "name": "Jeongmin Kim",
+        "screen_name": "jeongminnkim",
+        "location": "Seoul, Republic of Korea",
+        "description": "Lead Correspondent @nknewsorg, Editorial Director @southkoreapro • Previously @Reuters @CSIS • Bylines @foreignpolicy @asiasociety and more. RT not endorsement",
+        "url": "https://t.co/lUeKVoLEmi",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/lUeKVoLEmi",
+                "expanded_url": "https://www.nknews.org/content_author/jeongmin-kim/?t=1575968726176",
+                "display_url": "nknews.org/content_author…",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 21866,
+        "friends_count": 2019,
+        "listed_count": 406,
+        "created_at": "Mon Sep 04 22:58:01 +0000 2017",
+        "favourites_count": 8113,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": true,
+        "statuses_count": 13605,
+        "lang": null,
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "F5F8FA",
+        "profile_background_image_url": null,
+        "profile_background_image_url_https": null,
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/1486938015633002497/5mZk175y_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/1486938015633002497/5mZk175y_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/904841004305575936/1560874955",
+        "profile_link_color": "1DA1F2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": true,
+        "default_profile_image": false,
+        "following": false,
+        "follow_request_sent": false,
+        "notifications": false,
+        "translator_type": "none",
+        "withheld_in_countries": []
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 7334,
+      "favorite_count": 22929,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "en"
+  }]
