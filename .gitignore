@@ -2,3 +2,4 @@ data
 test.py
 .DS_store
 __pycache__
+score_pageRank.json
