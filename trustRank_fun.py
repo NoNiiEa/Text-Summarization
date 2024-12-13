@@ -33,38 +33,29 @@ def trustRank(graph, alpha = 0.85, times = 20):
     except FileNotFoundError as e:
         print(e)
 
-    seeds = {list(pageRank.keys())[0] : 1}
-
     nodes = list(graph.nodes())
-    num_nodes = len(nodes)
 
-    # Transition matrix T (row-normalized adjacency matrix)
-    T = nx.to_numpy_array(graph, nodelist=nodes, weight='weight')
-    row_sums = T.sum(axis=1)
-    T = np.divide(T, row_sums[:, np.newaxis], where=row_sums[:, np.newaxis] != 0)
+    ranks = {node: 0 for node in nodes}
+    ranks[list(pageRank.keys())[0]] = 1
 
-    # Initialize seed vector d
-    d = np.zeros(num_nodes)
-    if seeds is None:
-        raise ValueError("Seeds must be provided as a dictionary of {node: score}.")
+    seed = {node: 1 if ranks[node] == 1 else 0 for node in nodes}
+    divider = sum(seed.values())
+    seed = {node: value / divider for node, value in seed.items()}
 
-    for node, score in seeds.items():
-        d[nodes.index(node)] = score
-
-    # Normalize seed vector
-    d = d / d.sum()
-
-    # Initialize TrustRank vector t* with the seed vector
-    trust_rank = np.copy(d)
-
-    # Perform iterations of biased PageRank
     for _ in range(times):
-        trust_rank = alpha * np.dot(T.T, trust_rank) + (1 - alpha) * d
+        new_ranks = {}
+        for node in nodes:
+            base_rank = (1 - alpha) * seed[node]
+            sum_rank = sum(
+                ranks[neighbor] * graph[neighbor][node].get('weight', 1) /
+                sum(graph[neighbor][nbr].get('weight', 1) for nbr in graph.successors(neighbor))
+                for neighbor in graph.predecessors(node)
+                if sum(graph[neighbor][nbr].get('weight', 1) for nbr in graph.successors(neighbor)) > 0
+            )
+            new_ranks[node] = base_rank + alpha * sum_rank
+        ranks = new_ranks
 
-    # Map TrustRank scores back to node labels
-    trust_rank_dict = {nodes[i]: trust_rank[i] for i in range(num_nodes)}
-
-    return trust_rank_dict
+    return ranks
 
 def main():
     data = read_json('./data/Itaewon_tragedy.json')
