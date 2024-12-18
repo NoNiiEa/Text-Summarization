@@ -21,3 +21,36 @@ The overall workflow includes:
 7. [Acknowledgments](#acknowledgments)
 
 ---
+
+## prerequisites
+- Python 3.x
+- Required libraries:
+    - `networkx`
+    - `json`
+    - `nltk` (or other text preprocessing tools)
+
+Install all required libraries:
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Project Structure
+The directory contains the following files:
+```
+.
+├── data/                       # Input data folder
+│   └── Itaewon_tragedy.json    # Example input dataset
+├── cache/                      # Cached outputs
+│   ├── TriGraph.json           # Generated tri-gram graph
+│   ├── score_pageRank.json     # PageRank scores
+│   └── score_trustRank.json    # TrustRank scores
+├── json_handler.py             # JSON reading and writing utilities
+├── text_preprocessing.py       # Text preprocessing functions
+├── triGraph.py                 # Functions for tri-gram graph generation
+├── pageRank_fun.py             # PageRank algorithm implementation
+├── trustRank_fun.py            # TrustRank algorithm implementation
+├── summarization.py            # Pathfinding for summarization
+└── main.py                     # Main entry point
+```
