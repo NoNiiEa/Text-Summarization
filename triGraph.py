@@ -1,5 +1,17 @@
 import networkx as nx
+import json
+from networkx.readwrite import json_graph
 import matplotlib.pyplot as plt
+
+def dump_graph_json(dir, graph):
+    with open(dir, 'w') as file:
+        file.write(json.dumps(json_graph.node_link_data(graph)))
+
+def read_graph_json(dir):
+    with open(dir, 'r') as file:
+        data = json.load(file)
+    res = json_graph.node_link_graph(data)
+    return res
 
 def create_trigramGraph(texts):
     graph = nx.DiGraph()

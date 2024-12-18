@@ -1,18 +1,9 @@
-import json 
+from json_handler import *
 import numpy as np
 from text_preprocessing import *
 from triGraph import *
 import json
 import os
-
-def read_json(dir):
-    with open(dir, 'r') as file:
-        data = json.load(file)
-    return data
-
-def dump_json(dir, data):
-    with open(dir, 'w') as file:
-        json.dump(data, file, indent=4)
 
 def is_file_empty(file_path):
     if os.path.exists(file_path):
@@ -36,7 +27,9 @@ def trustRank(graph, alpha = 0.85, times = 20):
     nodes = list(graph.nodes())
 
     ranks = {node: 0 for node in nodes}
-    ranks[list(pageRank.keys())[0]] = 1
+    for i in range(1):
+        ranks[list(pageRank.keys())[i]] = 1
+
 
     seed = {node: 1 if ranks[node] == 1 else 0 for node in nodes}
     divider = sum(seed.values())
@@ -55,12 +48,10 @@ def trustRank(graph, alpha = 0.85, times = 20):
             new_ranks[node] = base_rank + alpha * sum_rank
         ranks = new_ranks
 
-    return ranks
+    return dict(sorted(ranks.items(), key=lambda item: item[1], reverse=True))
 
 def main():
-    data = read_json('./data/Itaewon_tragedy.json')
-    tweets = text_processing(data)
-    graph = create_trigramGraph(tweets)
+    graph = read_graph_json('./cache/TriGraph.json')
     trustRanks = trustRank(graph)
     trustRanks = dict(sorted(trustRanks.items(), key=lambda item: item[1], reverse=True))
     dump_json("./cache/score_trustRank.json", trustRanks)

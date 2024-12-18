@@ -22,4 +22,4 @@ def pageRank(graph, alpha=0.85, tol=1e-5, max_iter=100):
 
         ranks = new_ranks
 
-    return ranks
+    return dict(sorted(ranks.items(), key=lambda item: item[1], reverse=True))
